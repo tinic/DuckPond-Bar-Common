@@ -1,5 +1,7 @@
 <project name="DuckPondBarHeadless" default="compile" basedir=".">
 	<target name="compile">
+		<property name="ant.build.javac.source" value="1.8"/>
+		<property name="ant.build.javac.target" value="1.8"/>
 		<delete dir="./bin" />
 		<mkdir dir="./bin" />
 		<javac destdir="./bin" includeantruntime="false">
@@ -16,13 +18,6 @@
 			<zipgroupfileset dir="../lib" includes="gson-2.8.0.jar" />
 			<manifest>
 				<attribute name="Main-Class" value="org.tinic.duckpondbar.DuckPondBarHeadless"/>
-			</manifest>
-		</jar>
-		<jar jarfile="./bin/DuckPondBarUI.jar" basedir="./bin">
-			<zipgroupfileset dir="../lib" includes="coremidi4j-0.9.jar" />
-			<zipgroupfileset dir="../lib" includes="gson-2.8.0.jar" />
-			<manifest>
-				<attribute name="Main-Class" value="org.tinic.duckpondbar.DuckPondBarUI"/>
 			</manifest>
 		</jar>
 	</target>
